@@ -7,7 +7,7 @@ import NavbarComponent from './components/navigations/NavbarComponent';
 function App() {
 
   //const [state, setState] = useState(0); // initializevalue = 0
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);//products=[]
 
   // getter, setter 
 

@@ -11,6 +11,10 @@ import DetailProduct from './components/ProductDetail'
 import ErrorPage from './components/navigations/ErrorPage'
 import DetailPage from './pages/Detail'
 import MainLayout from './layout'
+import TestForm from './components/forms/TestForms'
+import UploadForm from './components/forms/UploadFileForm'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 
 const router = createBrowserRouter([
   // add layout
@@ -30,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <ContactPage />
+      },
+
+      {
+        path:'/form', 
+        element: <UploadForm/>
       },
       // dynamic segment
       {
@@ -67,5 +76,8 @@ createRoot(document.getElementById('root')).render(
   // <StrictMode>
   //   <App />
   // </StrictMode>,
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+  
 )
