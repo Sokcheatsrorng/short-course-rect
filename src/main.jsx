@@ -17,6 +17,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import CounterComponent from './components/counters/CounterComponent'
 import CreateProductForm from './components/forms/CreateProductForm'
+import DataTables from './components/tables/DataTables'
 
 const router = createBrowserRouter([
   // add layout
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:'test-redux', 
         element: <CounterComponent/>
+      },
+      {
+        path:"table-data", 
+        element: <DataTables/>
       },
       // dynamic segment
       {
