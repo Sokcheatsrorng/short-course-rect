@@ -15,6 +15,8 @@ import TestForm from './components/forms/TestForms'
 import UploadForm from './components/forms/UploadFileForm'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import CounterComponent from './components/counters/CounterComponent'
+import CreateProductForm from './components/forms/CreateProductForm'
 
 const router = createBrowserRouter([
   // add layout
@@ -38,7 +40,11 @@ const router = createBrowserRouter([
 
       {
         path:'/form', 
-        element: <UploadForm/>
+        element: <CreateProductForm/>
+      },
+      {
+        path:'test-redux', 
+        element: <CounterComponent/>
       },
       // dynamic segment
       {

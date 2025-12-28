@@ -41,18 +41,18 @@ export default function UploadForm() {
   }, [avatarFile]);
 //   logic add file to api or backend
   const onSubmit = async (data) => {
-    const formData = new FormData();
+    // const formData = new FormData();
     // formData.append("name", data.name);
     // formData.append("email", data.email);
-    formData.append("file", data.avatar[0]);
-    console.log("The data of formData: ", formData);
+    // formData.append("file", data.avatar[0]);
+    // console.log("The data of formData: ", formData);
 
     const res = await fetch('https://api.escuelajs.co/api/v1/files/upload',{
         method: "POST", 
         // headers: {
         //     'Content-Type': 'multipart/form-data',
         // }, 
-        body: formData
+        body: data?.file[0]
     }); 
 
     if(res.ok){
@@ -62,9 +62,9 @@ export default function UploadForm() {
     }
 
     // Simulate upload
-    await new Promise((r) => setTimeout(r, 1500));
-    console.log("Uploaded:", Object.fromEntries(formData));
-    alert("Profile created successfully!");
+    // await new Promise((r) => setTimeout(r, 1500));
+    // console.log("Uploaded:", Object.fromEntries(formData));
+    // alert("Profile created successfully!");
   };
   return (
     <div style={{ maxWidth: 500, margin: "2rem auto", padding: "2rem", border: "1px solid #ddd" }}>
